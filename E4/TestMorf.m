@@ -1,0 +1,18 @@
+aux = backGray;
+aux(:,:) = 0;
+aux(10:15,:) = 255;
+aux(100:110,:) = 255;
+aux(20,:) = 255;
+aux(30,:) = 255;
+aux(:,15) = 255;
+aux(:,30) = 255;
+aux(25:40,40:60) = 255;
+aux(120:124,120:130) = 255;
+aux(128:131,123:133) = 255;
+% aux = imclose(aux,SE7);
+% aux1 = imerode(aux,SE7);
+% aux = aux - aux1;
+aux = imopen(aux, SE71);
+aux = imclearborder(aux, 4);
+aux = imdilate(aux, SE1);
+imshow(aux);
